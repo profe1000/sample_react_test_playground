@@ -131,7 +131,7 @@ const AdminSignin = () => {
               </div>
 
               <button
-                className="w-full rounded-2xl bg-gradient-to-r from-brand to-accent-dark py-4 text-lg font-semibold text-white shadow-lg hover:from-brand-hover hover:to-accent transition"
+                className="w-full rounded-2xl bg-accent py-4 text-lg font-semibold text-black shadow-lg hover:from-brand-hover hover:to-accent-dark transition"
                 disabled={formLoading}
               >
                 {formLoading ? <LoadingOutlined /> : "Continue"}
