@@ -1,0 +1,15 @@
+.hotel-operations { min-height: 100vh; padding: 32px; background: #f7f8fb; }
+.operations-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.operations-header h2 { margin: 0 0 6px !important; color: #1d1d2b; }
+.operations-header p { margin: 0; color: #687083; }
+.operations-header h2 .anticon { color: #b91c1c; }
+.operations-stats { margin-bottom: 20px; }
+.operations-stats .ant-card { border-radius: 12px; box-shadow: 0 3px 12px rgba(31, 41, 55, .05); }
+.operations-table { border-radius: 12px; box-shadow: 0 3px 12px rgba(31, 41, 55, .05); }
+.operations-table .ant-card-head { min-height: 64px; }
+.operations-input, .operations-form input, .operations-form select { width: 100%; min-height: 38px; padding: 8px 11px; color: #1d1d2b; background: #fff; border: 1px solid #d9dce3; border-radius: 6px; outline: none; }
+.operations-input { width: 240px; }
+.operations-input:focus, .operations-form input:focus, .operations-form select:focus { border-color: #b91c1c; box-shadow: 0 0 0 2px rgba(185, 28, 28, .1); }
+.operations-form { display: grid; gap: 16px; }
+.operations-form label { display: grid; gap: 6px; color: #303443; font-size: 14px; font-weight: 500; }
+@media (max-width: 640px) { .hotel-operations { padding: 20px 14px; } .operations-header { flex-direction: column; } .operations-table .ant-card-extra { float: none; margin: 12px 0 0; } }

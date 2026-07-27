@@ -1,0 +1,123 @@
+/* CUSTOM css */
+@font-face {
+  font-family: "Poppins-black";
+  src: url("Poppins/Poppins-Black.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Bona Nova";
+  src: url("Bona_Nova/BonaNova-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Bona Nova Regular";
+  src: url("Bona_Nova/BonaNova-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Bona Nova Italics";
+  src: url("Bona_Nova/BonaNova-Italic.ttf");
+}
+
+.myfont1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.myfont2 {
+  font-family: "Poppins-black", sans-serif;
+}
+
+.myfont3 {
+  font-family: "Poppins-Bold", sans-serif;
+}
+
+.myfont4 {
+  font-family: "Fave", sans-serif;
+}
+
+.myfont5 {
+  font-family: "Kanit", sans-serif;
+}
+
+/* Primary Color */
+
+.siteBackgroundPrimary {
+  background-color: #2b8234 !important;
+  color: white !important;
+}
+
+.sitePrimaryColor {
+  color: #2b8234 !important;
+}
+
+.siteBorderPrimaryColor {
+  border-color: #2b8234 !important;
+}
+
+.sitePrimaryBorderButton {
+  border: 1px solid #2b8234 !important;
+  color: #2b8234 !important;
+  height: 50px;
+}
+
+.sitePrimaryButton {
+  background-color: #2b8234 !important;
+  color: #fff !important;
+  height: 50px;
+}
+
+.siteButtonNoColor {
+  color: #fff;
+  height: 50px;
+}
+
+.siteTableBtn {
+  color: #fff;
+  height: 50px;
+  border: none;
+  display: inline-block;
+  padding: 0px 8px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Ant Design Custom Table Design */
+
+.ant-table-thead .ant-table-cell {
+  background-color: #f9fafb !important;
+  color: #667085 !important;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+}
+
+.ant-table-tbody {
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 50px; /* 150% */
+}
+
+.tagText {
+  text-transform: capitalize;
+}

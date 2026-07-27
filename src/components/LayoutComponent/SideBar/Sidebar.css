@@ -1,0 +1,7 @@
+.fixedHeaderSideBar {
+  position: fixed;
+  width: 300px;
+  left: 0px;
+  height: 80px;
+  z-index: 100000;
+}
