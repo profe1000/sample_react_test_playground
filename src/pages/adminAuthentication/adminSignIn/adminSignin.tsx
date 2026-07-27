@@ -85,14 +85,14 @@ const AdminSignin = () => {
       {contextHolder}
       <AuthSuperWrapper
         authWrapperProps={{
-          title: "Welcome Back to",
-          brandName: "SupaRecords Hotel",
+          title: "Run private",
+          brandName: "utility networks with ease.",
           description:
-            "Signin to continue using SupaRecords Hotel.",
+            "Sign in to monitor, manage and optimize your metering operations.",
         }}
       >
             <img
-              src={process.env.REACT_APP_LOGO_Image || "/images/logo_red.png"}
+              src="/images/logo.png"
               alt="logo"
               className="h-16 mx-auto mb-8 rounded-2xl"
             />
@@ -102,7 +102,7 @@ const AdminSignin = () => {
             </h2>
 
             <p className="text-center text-gray-500 mt-3">
-              Access your SupaRecords Hotel dashboard
+              Access your utility metering dashboard
             </p>
 
             <form onSubmit={handleSubmit} className="mt-10 space-y-6">
@@ -125,13 +125,13 @@ const AdminSignin = () => {
               />
 
               <div className="flex justify-end">
-                <Link to="/auth/forget-password" className="text-red-600 hover:underline">
+                <Link to="/auth/forget-password" className="text-brand hover:text-brand-hover hover:underline">
                   Forgot Password?
                 </Link>
               </div>
 
               <button
-                className="w-full rounded-2xl bg-gradient-to-r from-red-600 to-orange-500 py-4 text-lg font-semibold text-white shadow-lg hover:scale-[1.01] transition"
+                className="w-full rounded-2xl bg-gradient-to-r from-brand to-accent-dark py-4 text-lg font-semibold text-white shadow-lg hover:from-brand-hover hover:to-accent transition"
                 disabled={formLoading}
               >
                 {formLoading ? <LoadingOutlined /> : "Continue"}
@@ -139,13 +139,13 @@ const AdminSignin = () => {
 
               <div className="text-center text-gray-600">
                 Don't have an account?{" "}
-                <Link className="font-semibold text-red-600" to="/auth/signup">
+                <Link className="font-semibold text-brand hover:text-brand-hover" to="/auth/signup">
                   Create Account
                 </Link>
               </div>
 
               <div className="text-center">
-                <Link className="text-sm text-slate-500 hover:text-red-600" to="/auth/signin-offline">
+                <Link className="text-sm text-text-secondary hover:text-brand" to="/auth/signin-offline">
                   Use Offline Login
                 </Link>
               </div>

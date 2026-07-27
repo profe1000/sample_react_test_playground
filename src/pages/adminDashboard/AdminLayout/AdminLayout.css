@@ -18,7 +18,7 @@
   width: 300px;
   z-index: 1000000;
   overflow-y: scroll;
-  border-right: 1px solid #0d333e;
+  border-right: 1px solid var(--color-border);
 }
 
 .fixedHeader {
@@ -32,3 +32,4 @@
 .content {
   padding-top: 80px;
 }
+.admin-content { background: var(--color-bg-light); }

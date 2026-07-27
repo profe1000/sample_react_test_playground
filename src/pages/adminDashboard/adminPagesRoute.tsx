@@ -26,13 +26,9 @@ const AdminPagesRoutes = () => {
         />
         <Route path="/admins" element={<AdminsPage />} />
         <Route path="/admins-settings" element={<AdminSettingsPage />} />
-        <Route path="/room-types" element={<HotelOperations />} />
-        <Route path="/rooms" element={<HotelOperations />} />
-        <Route path="/room-reservations" element={<HotelOperations />} />
-        <Route path="/room-maintenance" element={<HotelOperations />} />
-        <Route path="/customers" element={<HotelOperations />} />
-        <Route path="/customer-payment-transactions" element={<HotelOperations />} />
-        <Route path="/inflow-transactions" element={<HotelOperations />} />
+        <Route path="/billings" element={<HotelOperations />} />
+        <Route path="/fees" element={<HotelOperations />} />
+        <Route path="/residents" element={<HotelOperations />} />
         <Route path="/transactions" element={<HotelOperations />} />
         <Route path="/logout" element={<AdminLogout />} />
         <Route path="*" element={<Nopage />} />

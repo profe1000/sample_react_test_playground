@@ -6,15 +6,20 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import { BasicContextProvider } from "./context/BasicContext";
+import { ConfigProvider } from "antd";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <Provider store={store}>
-    <BasicContextProvider>
-      <App />
-    </BasicContextProvider>
+    <ConfigProvider theme={{ token: {
+      colorPrimary: "#9E0059", colorInfo: "#9E0059", colorLink: "#9E0059",
+      colorText: "#23001E", colorTextSecondary: "#A08B99",
+      colorBgLayout: "#F5F2F0", colorBorder: "#E7DFDB", colorWarning: "#F0A84A",
+    } }}>
+      <BasicContextProvider><App /></BasicContextProvider>
+    </ConfigProvider>
   </Provider>
 );
 

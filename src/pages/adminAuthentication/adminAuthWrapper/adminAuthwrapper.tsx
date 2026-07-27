@@ -15,9 +15,9 @@ const AdminAuthWrapper = ({
   testId,
   children,
   title = "Welcome to",
-  brandName = "SupaRecords Hotel",
+  brandName = "Utility Networks, With Ease.",
   description =
-    "Manage inventory, accounting, sales, purchasing and warehouses from one secure cloud platform.",
+    "Monitor meters, manage consumption and keep every private utility network running smoothly from one secure platform.",
 }: IAdminAuthWrapper) => {
   return (
     <aside
@@ -28,14 +28,14 @@ const AdminAuthWrapper = ({
       <div className="absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full " />
 
       <div className="relative m-auto w-full max-w-xl px-10 py-12 xl:px-16">
-        <div className="inline-flex items-center rounded-full border border-red-500/20 bg-red-500/10 px-5 py-2 text-sm font-medium">
+        <div className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-sm font-medium text-accent">
           <SafetyCertificateOutlined className="mr-2" />
           Trusted Business Platform
         </div>
 
         <h1 className="mt-8 text-5xl font-black leading-tight xl:text-6xl">
           {title}
-          <span className="block bg-gradient-to-r from-white to-red-400 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
             {brandName}
           </span>
         </h1>
@@ -46,10 +46,10 @@ const AdminAuthWrapper = ({
 
         <div className="mt-10 grid gap-4">
           {[
-            "Hotel Management",
-            "Real-time Reporting",
-            "Room Services",
-            "24/7 Support",
+            "Real-time Meter Monitoring",
+            "Usage & Billing Insights",
+            "Network Management",
+            "Reliable Support",
           ].map((item) => (
             <div
               key={item}

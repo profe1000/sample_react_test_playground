@@ -79,44 +79,24 @@ const Sidebar: React.FC<ISideBarType> = ({ onLinkChange }) => {
       title: "Dashboard",
     },
     {
-      icon: <AppstoreOutlined />,
-      url: "/admin/room-types",
-      title: "Room Type",
-    },
-    {
-      icon: <AppstoreOutlined />,
-      url: "/admin/rooms",
-      title: "Rooms",
-    },
-    {
-      icon: <ShoppingCartOutlined />,
-      url: "/admin/room-reservations",
-      title: "Room Reservations",
-    },
-    {
-      icon: <ToolOutlined />,
-      url: "/admin/room-maintenance",
-      title: "Rooms Maintenance",
-    },
-    {
-      icon: <TeamOutlined />,
-      url: "/admin/customers",
-      title: "Customers",
-    },
-    {
-      icon: <CreditCardOutlined />,
-      url: "/admin/customer-payment-transactions",
-      title: "Customer Payment Transactions",
-    },
-    {
-      icon: <WalletOutlined />,
-      url: "/admin/inflow-transactions",
-      title: "Inflow Transactions",
-    },
-    {
       icon: <BarChartOutlined />,
       url: "/admin/transactions",
       title: "Transactions",
+    },
+    {
+      icon: <CreditCardOutlined />,
+      url: "/admin/billings",
+      title: "Billings",
+    },
+    {
+      icon: <DollarCircleOutlined />,
+      url: "/admin/fees",
+      title: "Fees",
+    },
+    {
+      icon: <TeamOutlined />,
+      url: "/admin/residents",
+      title: "Residents",
     },
     {
       icon: <SettingOutlined />,
@@ -175,8 +155,7 @@ const Sidebar: React.FC<ISideBarType> = ({ onLinkChange }) => {
             <span>
               <img
                 style={{ width: "200px" }}
-                src={`${process.env.REACT_APP_LOGO_Image || "/images/logo_red.png"
-                  }`}
+                src="/images/logo.png"
                 alt=""
                 className="mx-auto block rounded-2xl"
               />
@@ -191,8 +170,8 @@ const Sidebar: React.FC<ISideBarType> = ({ onLinkChange }) => {
                 <button
                   onClick={item.onClick}
                   className={
-                    "w-full flex items-center h-14 px-4 font-sans text-white rounded-lg hover:bg-red-500 " +
-                    (currentUrlPath === item.url ? "bg-red-800" : "")
+                    "w-full flex items-center h-14 px-4 font-sans text-white rounded-lg hover:bg-brand-hover " +
+                    (currentUrlPath === item.url ? "bg-brand" : "")
                   }
                 >
                   <span
@@ -208,8 +187,8 @@ const Sidebar: React.FC<ISideBarType> = ({ onLinkChange }) => {
               ) : (
                 <Link
                   className={
-                    "w-full flex items-center h-14 px-4 font-sans text-white rounded-lg hover:bg-red-500 " +
-                    (currentUrlPath === item.url ? "bg-red-800" : "")
+                    "w-full flex items-center h-14 px-4 font-sans text-white rounded-lg hover:bg-brand-hover " +
+                    (currentUrlPath === item.url ? "bg-brand" : "")
                   }
                   to={item.url}
                 >

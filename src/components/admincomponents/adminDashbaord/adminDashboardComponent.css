@@ -1,9 +1,21 @@
-@tailwind base;
-
-@layer base {
-  img {
-    @apply inline;
-  }
-}
-@tailwind components;
-@tailwind utilities;
+.utility-dashboard { min-height: 100vh; box-sizing: border-box; padding: 24px; color: #23001e; background: #f5f2f0; font-family: Poppins, sans-serif; }
+.utility-dashboard__header { min-height: 51px; display: grid; grid-template-columns: 1fr auto; align-items: start; position: relative; }
+.utility-dashboard h1, .utility-dashboard h2 { margin: 0; font-weight: 500; color: #23001e; }
+.utility-dashboard h1 { font-size: 20px; }
+.utility-dashboard h2 { font-size: 17px; }
+.help-button { border: 0; border-radius: 0 0 16px 16px; background: #5d4393; color: #fff; padding: 4px 26px 7px; font-weight: 700; font-size: 13px; }
+.utility-address { grid-column: 2; text-align: right; margin-top: 30px; font-size: 15px; line-height: 20px; }
+.site-selector { width: 365px; margin: 0 0 28px; border: 1px solid #d7d3d1; padding: 10px 14px; display: flex; justify-content: space-between; border-radius: 3px; color: #4d4a4a; }
+.utility-overview { display: grid; grid-template-columns: 1.35fr 0.98fr; gap: 14px; }
+.usage-panel, .meter-summary-panel, .metric-cards article, .meter-table-panel { border: 1px solid #d5d5d5; border-radius: 5px; background: #fff; }
+.usage-panel { min-height: 284px; padding: 14px; }
+.usage-legend { display: flex; gap: 12px; justify-content: center; color: #777; font-size: 12px; margin: 27px 0 7px; }
+.usage-legend i { width: 18px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 4px; }.teal-key { background: #318f89; }.purple-key { background: #664392; }
+.usage-chart { height: 194px; display: grid; grid-template-columns: 45px 1fr 58px; align-items: end; border-bottom: 1px solid #eee; background: repeating-linear-gradient(to bottom, transparent 0, transparent 38px, #f2f2f2 39px, transparent 40px); }
+.usage-scale { height: 160px; display: flex; flex-direction: column; justify-content: space-between; color: #686868; font-size: 11px; text-align: right; }.usage-scale.right { height: 160px; text-align: left; }
+.usage-bars { height: 160px; display: flex; align-items: end; gap: 4px; }.usage-bar-column { flex: 1; min-width: 5px; position: relative; height: 160px; display: flex; align-items: end; justify-content: center; }.usage-bar { width: 72%; background: #318f89; }.usage-bar.purple { background: #664392; }.usage-bar-column small { position: absolute; transform: rotate(-48deg); bottom: -36px; font-size: 10px; white-space: nowrap; color: #777; }
+.utility-summary-column { display: grid; gap: 14px; }.meter-summary-panel { padding: 14px; }.meter-summary-content { display: flex; justify-content: space-around; align-items: center; height: 130px; text-align: center; font-size: 12px; }.meter-ring-item { width: 112px; display: grid; justify-items: center; gap: 7px; }.meter-ring { width: 63px; height: 63px; border: 5px solid; border-radius: 50%; display: grid; place-items: center; color: #555; }.meter-ring.purple { border-color: #d6c9ee; border-top-color: #68449a; }.meter-ring.teal { border-color: #d7eeee; border-top-color: #318f89; }.meter-ring.gold { border-color: #fbf2d5; border-top-color: #f3df98; }.power-source { color: #23001e; display: grid; justify-items: center; font-size: 10px; }.power-source svg { font-size: 52px; color: #ddd; }.power-source strong { margin-top: 10px; font-weight: 500; font-size: 12px; }
+.metric-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }.metric-cards article { min-height: 47px; padding: 10px; position: relative; }.metric-cards small { color: #9b9b9b; border-bottom: 1px dotted #999; display: block; font-size: 10px; }.metric-cards strong { display: block; margin-top: 13px; font-size: 16px; font-weight: 500; }.metric-cards em { position: absolute; right: 9px; bottom: 11px; color: #49aa65; font-size: 10px; font-style: normal; }
+.meter-table-panel { margin: 24px 0 0; padding: 20px 16px 0; background: #fff; }.meter-table-toolbar { display: grid; grid-template-columns: 490px 1fr auto; gap: 30px; align-items: center; padding: 0 0 16px; font-size: 13px; color: #5b4a7e; }.meter-table-toolbar label { display: flex; align-items: center; gap: 10px; border: 1px solid #d6d1d0; border-radius: 2px; padding: 8px 11px; color: #b6b6b6; }.meter-table-toolbar input { width: 100%; border: 0; outline: 0; font: inherit; }.updated { color: #7e7e7e; }.updated svg { border: 1px solid #ddd; border-radius: 50%; padding: 5px; margin-right: 5px; }
+.meter-table-scroll { overflow-x: auto; } table { width: 100%; min-width: 1000px; border-collapse: collapse; font-size: 12px; } th { background: #fafafa; text-align: left; padding: 14px 11px; font-weight: 600; white-space: nowrap; } td { padding: 12px 11px; white-space: nowrap; border-top: 1px solid #f2f2f2; } tbody tr.needs-attention { background: #fff2d5; } td a { color: #145bd6; text-decoration: underline; }.fees-due, .meter-alert { color: #ff5b5b; } td svg { color: #36a566; } td button { background: #7250a3; color: #fff; border: 0; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; padding: 0; }
+@media (max-width: 900px) { .utility-dashboard { padding: 16px; }.utility-overview { grid-template-columns: 1fr; }.utility-address { display: none; }.utility-dashboard__header { grid-template-columns: 1fr auto; }.metric-cards { grid-template-columns: 1fr; }.meter-table-toolbar { grid-template-columns: 1fr; gap: 10px; }.meter-table-panel { margin: 24px 0 0; }.site-selector { width: auto; }.usage-bars { gap: 2px; } }

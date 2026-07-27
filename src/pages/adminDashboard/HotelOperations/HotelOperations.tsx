@@ -10,7 +10,7 @@ import {
 } from "@ant-design/icons";
 import { Button, Card, Col, Modal, Row, Space, Statistic, Table, Tag, Typography, notification } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./HotelOperations.css";
 
@@ -27,6 +27,24 @@ type Screen = {
 };
 
 const screens: Record<string, Screen> = {
+  "/admin/billings": {
+    title: "Billings", subtitle: "Create, review and track utility bills across your private network.", singular: "bill", icon: <ApartmentOutlined />,
+    stats: [{ label: "Bills issued", value: 186 }, { label: "Due this month", value: "NGN 4,850,000" }, { label: "Collection rate", value: "92%" }],
+    fields: [{ key: "reference", title: "Bill reference" }, { key: "resident", title: "Resident" }, { key: "period", title: "Billing period" }, { key: "amount", title: "Amount", type: "money" }, { key: "status", title: "Status", type: "status" }],
+    rows: [{ id: 1, reference: "BILL-24071", resident: "Adaeze Okafor", period: "July 2026", amount: 24500, status: "Paid" }, { id: 2, reference: "BILL-24072", resident: "Chinedu Obi", period: "July 2026", amount: 18750, status: "Pending" }, { id: 3, reference: "BILL-24073", resident: "Fatima Bello", period: "July 2026", amount: 32100, status: "Issued" }],
+  },
+  "/admin/fees": {
+    title: "Fees", subtitle: "Configure service, connection and late-payment fees for your utility network.", singular: "fee", icon: <BankOutlined />,
+    stats: [{ label: "Active fees", value: 6 }, { label: "Collected this month", value: "NGN 385,000" }, { label: "Waived", value: "NGN 42,000" }],
+    fields: [{ key: "name", title: "Fee" }, { key: "category", title: "Category" }, { key: "amount", title: "Amount", type: "money" }, { key: "frequency", title: "Frequency" }, { key: "status", title: "Status", type: "status" }],
+    rows: [{ id: 1, name: "Meter service charge", category: "Service", amount: 1500, frequency: "Monthly", status: "Active" }, { id: 2, name: "Late payment fee", category: "Penalty", amount: 2500, frequency: "Per invoice", status: "Active" }, { id: 3, name: "Connection fee", category: "Setup", amount: 15000, frequency: "One-time", status: "Active" }],
+  },
+  "/admin/residents": {
+    title: "Residents", subtitle: "Manage resident profiles, meter assignments and account status.", singular: "resident", icon: <UserOutlined />,
+    stats: [{ label: "Active residents", value: 284 }, { label: "Meters assigned", value: 267 }, { label: "Accounts overdue", value: 19 }],
+    fields: [{ key: "name", title: "Resident" }, { key: "meter", title: "Meter number" }, { key: "unit", title: "Unit" }, { key: "balance", title: "Balance", type: "money" }, { key: "status", title: "Status", type: "status" }],
+    rows: [{ id: 1, name: "Adaeze Okafor", meter: "MTR-2048", unit: "Block A, 204", balance: 0, status: "Active" }, { id: 2, name: "Chinedu Obi", meter: "MTR-1357", unit: "Block B, 101", balance: 18750, status: "Pending" }, { id: 3, name: "Fatima Bello", meter: "MTR-8892", unit: "Block C, 308", balance: 32100, status: "Active" }],
+  },
   "/admin/room-types": {
     title: "Room types", subtitle: "Configure accommodation types, capacity, beds and nightly pricing.", singular: "room type", icon: <ApartmentOutlined />,
     stats: [{ label: "Active types", value: 6 }, { label: "Average nightly rate", value: "₦84,500" }, { label: "Total inventory", value: 48 }],
@@ -82,12 +100,20 @@ const tagColor = (value: string) => /successful|paid|available|active|verified|r
 
 export default function HotelOperations() {
   const location = useLocation();
-  const screen = screens[location.pathname] || screens["/admin/room-types"];
+  const screen = screens[location.pathname] || screens["/admin/billings"];
   const [rows, setRows] = useState(screen.rows);
   const [query, setQuery] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [draft, setDraft] = useState<Record<string, string>>({});
   const [api, contextHolder] = notification.useNotification();
+
+  // The component is reused across routes, so refresh local demo data when the screen changes.
+  useEffect(() => {
+    setRows(screen.rows);
+    setQuery("");
+    setDraft({});
+    setModalOpen(false);
+  }, [location.pathname, screen]);
 
   const visibleRows = useMemo(() => rows.filter(row => Object.values(row).join(" ").toLowerCase().includes(query.toLowerCase())), [rows, query]);
   const columns: ColumnsType<RecordItem> = screen.fields.map(field => ({ title: field.title, dataIndex: field.key, key: field.key, render: (value: string | number) => field.type === "money" ? <span className={Number(value) < 0 ? "text-red-600" : "font-medium"}>{money(value)}</span> : field.type === "status" ? <Tag color={tagColor(String(value))}>{value}</Tag> : value }));

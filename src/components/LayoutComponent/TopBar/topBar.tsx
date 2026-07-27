@@ -98,8 +98,8 @@ export const TopBar = () => {
         open={open}
         width={300}
         style={{
-          background: "linear-gradient(to bottom right, #020617 0%, #450A0A 50%, #000000 100%)",
-        }} // Custom red-600 color
+          background: "linear-gradient(to bottom right, #23001E 0%, #3A1434 50%, #9E0059 100%)",
+        }}
       >
         <Sidebar onLinkChange={onClose}></Sidebar>
       </Drawer>

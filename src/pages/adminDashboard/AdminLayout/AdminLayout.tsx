@@ -18,15 +18,15 @@ const AdminLayout = () => {
           className="w3-hide-small w3-hide-medium"
           width={300}
         >
-          <div className="sideMenuFixed bg-gradient-to-br from-slate-950 via-red-950 to-black">
+          <div className="sideMenuFixed bg-gradient-to-br from-primary via-primary-light to-brand">
             <Sidebar></Sidebar>
           </div>
         </Sider>
         <Layout>
-          <div className="w3-white fixedHeader">
+          <div className="fixedHeader">
             <TopBar></TopBar>
           </div>
-          <Content className="content w3-white">
+          <Content className="content admin-content">
             <Outlet />
           </Content>
         </Layout>
